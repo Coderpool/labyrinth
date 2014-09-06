@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block content %}
+<head>
+  <title>Slide puzzle</title>
+  <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}slide-puzzle.css"/>
+</head>
+<p>Use arrows or mouse click to move boxes.</p>
+
+<div id="board"></div>
+<script type="text/javascript" src="{{ STATIC_URL }}jquery.js"></script>
+<script type="text/javascript" src="{{ STATIC_URL }}rx.js"></script>
+<script type="text/javascript" src="{{ STATIC_URL }}rx.jQuery.js"></script>
+<script type="text/javascript" src="{{ STATIC_URL }}slide-puzzle.js"></script>
+<script type="text/javascript">
+  $('#board').slidePuzzle({image:'{{ STATIC_URL }}{{ c.level.image }}', split: {{ c.level.attribute }}, width:600, height:450});
+  $(document).keydown(function(w){$.get('/contest/inc/')});
+</script>
+
+{% endblock %}

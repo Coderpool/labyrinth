@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block content %}
+    {% include "nav.html" %}
+</br></br></br></br></br></br></br></br></br></br></br></br>
+    <title>Top Players</title>
+   <body>
+<nav class="menu">
+<ul id="menu">
+<div class="container">
+<div class="wrapper">
+<h1 class="color_yellow" align="center">Leader Board</h1>
+<h3><table width="100%" border="2" align="centre" cellpadding="4" >
+    <tr align="justify"height="40"><th width="10%">RANK</th><th width="25%">NAME</th><th width="49%">COLLEGE</th><th width="16%">LEVEL</th></tr>
+              {% for i,j in c %}
+      
+               <tr class="color_white" align="justify" height="40">
+               <td>{{ i }}</td>
+                <td>{{ j.user.first_name }}</td>
+                <td>{{ j.college }}</td>
+                 <td>{{ j.level }}</td>
+                 </tr>
+             {% endfor %}
+                            
+                 
+          </table></h3>
+        
+</div>     
+   
+  
+  </ul>                     
+ </nav>  
+   </body>
+{% endblock %}

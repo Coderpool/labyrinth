@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+	<link href="{{ STATIC_URL }}tmps/images/favicon.png" rel="shortcut icon">
+	<link href="{{ STATIC_URL }}tmps/css/style.css" media="all" rel="stylesheet" type="text/css">
+	<link href="{{ STATIC_URL }}tmps/css/responsive.css" rel="stylesheet" type="text/css">
+	<script src="{{ STATIC_URL }}tmps/js/jquery-1.7.1.min.js" type="text/javascript"></script>
+	<script src="{{ STATIC_URL }}tmps/js/supersubs.js" type="text/javascript"></script>
+	<script type="text/javascript" src="{{ STATIC_URL }}tmps/js/tinybox.js"></script>
+	<script src="{{ STATIC_URL }}tmps/js/quicksand.js" type="text/javascript"></script>
+	<script src="{{ STATIC_URL }}tmps/js/quicksand_config.js" type="text/javascript"></script>
+	<script src="{{ STATIC_URL }}tmps/js/ts-portfolio-slide.js" type="text/javascript"></script>
+	<script src="{{ STATIC_URL }}tmps/js/tinynav.min.js" type="text/javascript"></script>
+	<script src="{{ STATIC_URL }}tmps/js/scripts.js" type="text/javascript"></script>
+	<script>
+if($.browser.msie){
+		window.location.replace('/browser')
+		}
+	</script>
+
+</head>
+<!--Author:Jithesh Vijayakumar <jithesh.92@gmail.com -->
+<!--Author:Rajeev S  <rajeevs1992@gmail.com -->
+<!--Govt. Engineering College Thrissur -->
+
+<body>
+	<div id="fb-root"></div><script>
+window.fbAsyncInit = function() {
+		// init the FB JS SDK
+		FB.init({
+		appId      : '411718605604683',                        // App ID from the app dashboard
+		channelUrl : '/', // Channel file for x-domain comms
+		status     : true,                                 // Check Facebook Login status
+		xfbml      : true                                  // Look for social plugins on the page
+		});
+
+		// Additional initialization code such as adding Event Listeners goes here
+		};
+
+		// Load the SDK asynchronously
+		(function(d, s, id){
+		var js, fjs = d.getElementsByTagName(s)[0];
+		if (d.getElementById(id)) {return;}
+		js = d.createElement(s); js.id = id;
+		js.src = "//connect.facebook.net/en_US/all.js";
+		fjs.parentNode.insertBefore(js, fjs);
+		}(document, 'script', 'facebook-jssdk'));
+	</script>
+
+	<div class="spinner"></div>
+
+	<div class="sn1">
+		<ul class="sn">
+			<li>
+				<a href="http://www.facebook.com/dyuthigec" target="_blank" title="Facebook"><span class="icon-img" style="background:url({{ STATIC_URL}}tmps/images/social/facebook.png)"></span></a>
+			</li>
+
+			<li>
+				<a href="http://www.twitter.com/dyuthigec" target="_blank" title="Twitter"><span class="icon-img" style="background:url({{ STATIC_URL}}tmps/images/social/twitter.png)"></span></a>
+			</li>
+
+			<li>
+				<a href="http://www.youtube.com/DyuthiOfficial" target="_blank" title="YouTube"><span class="icon-img" style="background:url({{ STATIC_URL}}tmps/images/social/ytube.png)"></span></a>
+			</li>
+		</ul>
+	</div>
+
+	<section id="content">
+		<header>
+			<nav class="menu">
+				<ul id="menu">
+					<li class="lm">
+						<a href="http://www.dyuthi.in/" target="_blank"><img src="{{ STATIC_URL }}tmps/images/dyuthilogo.png"></a>
+					</li>
+
+					<li>
+						<a href='/home/#_=_'>Home</a>
+					</li>
+
+					<li>
+						<a href='/hitlist'>Leader Board</a>
+					</li>
+
+					<li>
+						<a href="http://www.facebook.com/labyrinthdyuthi" target="_blank" title="">Forum</a>
+					</li>
+
+					<li class="no_bg">
+						<a href='/logout/'>Logout</a>
+					</li>
+
+					<li class="no_bg">
+						<a href="#">Hello ... {{ user.first_name }}</a>
+					</li>
+				</ul>
+			</nav>
+
+			<div class="logo">
+				<a href="/home/#_=_"><img alt="" src="{{ STATIC_URL }}tmps/images/logo.png"></a>
+			</div>
+		</header>{% include "nav.html" %} {% block content %} {% endblock %}
+	</section>
+
+<div id="PageFooter">
+<a href=""><img <img style="border: 2px solid black;border-radius: 20px;-moz-border-radius: 20px;-khtml-border-radius: 20px; -webkit-border-radius: 20px;" src="http://www.python.org/community/logos/python-powered-w-140x56.png" border="0" alt="Powered by Python" title="Powered by Python" /></a>
+</div>
+	</body>
+</html>

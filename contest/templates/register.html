@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+<head>
+  <title>Register</title>
+  <h1>Register</h1>
+</head>
+{% block content %}
+    <form method = 'post'>
+    {% csrf_token %}
+
+
+</br></br></br></br></br></br></br></br></br></br></br></br>
+ <nav class="menu">
+      <ul id="menu">
+	<div class="container">
+        	<div class="wrapper">
+          	<h1 class="color_yellow" align="center">Enter Your Details </h1>
+          
+            <table width="100%" border="25" align="centre" cellpadding="4" >
+           
+	 <tr class="color_white" align="centre">
+	    <td><h4 class="pad7" >Name</h4></td>
+            <td><h4 class="pad7">{{ user.first_name }} {{ user.last_name }}</h4></td>
+           
+        </tr>
+ 	<tr class="color_white" align="justify">
+            <td><h4 class="pad7">Email</h4></td>
+            <td><h4 class="pad7">{{ user.email }}</h4></td>
+        </tr>
+        <tr class="color_white" align="justify">
+	    <td><h4 class="pad7">College *  </h4></td>
+            <td><h4 class="pad7"><input type='text' name='college'></h4></td>
+        </tr>
+        <tr class="color_white" align="justify">
+	    <td><h4 class="pad7">Mobile*  </h4></td>
+            <td><h4 class="pad7"><input type='text' name='mobile'></h4></td>
+        </tr>
+
+    </table>
+         <input type='submit' value='Get Started!'>    
+           
+          </div>
+        </div>
+     
+      
+
+    </form>
+ </li> 
+ </ul> </nav> 
+
+
+{% endblock %}

@@ -1,0 +1,7 @@
+db
+*.pyc
+bin
+local
+lib
+include
+package

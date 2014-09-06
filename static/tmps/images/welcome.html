@@ -1,0 +1,124 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Labyrinth - Dyuthi-13 Online Treasure Hunt</title>
+	<meta name="robots" content="index, follow" />
+	<meta name="description" content="Dyuthi 13 Online Treasure Hunt">
+	<meta name="keywords" content="dyuthi, dyuthi online treasure hunt, gec thrissur, gec tcr, gec thrissur techfest" />
+<meta name="author" content="Jithesh Vijayakumar"/>
+    <link rel="shortcut icon" href="/static/tmps/images/favicon.png">
+<link rel="stylesheet" type="text/css" href="/static/tmps/css/style.css" media="all" />
+<link rel="stylesheet" type="text/css" href="/static/tmps/css/responsive.css" />
+<script type="text/javascript" src="/static/tmps/js/jquery-1.7.1.min.js"></script>
+<script type="text/javascript" src="/static/tmps/js/supersubs.js"></script>
+<script type="text/javascript" src="/static/tmps/js/quicksand.js"></script>
+<script type="text/javascript" src="/static/tmps/js/quicksand_config.js"></script>
+<script type="text/javascript" src="/static/tmps/js/ts-portfolio-slide.js"></script>
+<script type="text/javascript" src="/static/tmps/js/tinynav.min.js"></script>
+<script type="text/javascript" src="/static/tmps/js/scripts.js"></script>
+<!--[if lt IE 9]>
+  	<script type="text/javascript" src="/static/tmps/js/html5.js"></script>
+    <![endif]-->
+<!--[if lt IE 8]>
+		<div style=' clear: both; text-align:center; position: relative;'>
+			<a href="../../windows.microsoft.com/en-US/internet-explorer/products/ie/home_40ocid=ie6_countdown_bannercode"><img src="../../storage.ie6countdown.com/assets/100/images/banners/warning_bar_0000_us.jpg" border="0" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today." /></a>
+		</div>
+	<![endif]-->
+
+
+</head>
+<body>
+<div class="spinner"></div>
+      </ul>
+<div class="sn1">
+    <ul class="sn" >
+      <li><a href="http://www.facebook.com/dyuthigec"  target="_blank" title="Facebook"><span class="icon-img" style="background:url(/static/tmps/images/social/facebook.png)"></span></a></li>
+      <li><a href="http://www.twitter.com/dyuthigec"  target="_blank" title="Twitter"><span class="icon-img" style="background:url(/static/tmps/images/social/twitter.png)"></span></a></li>
+      <li><a href="http://www.youtube.com/dyuthigec"  target="_blank" title="YouTube"><span class="icon-img" style="background:url(/static/tmps/images/social/ytube.png)"></span></a></li>
+    </ul>
+    </div>
+<section id="content">
+ <header>
+    <nav class="menu">
+      <ul id="menu">
+		
+        <li class="lm"><a href="http://www.dyuthi.in/" target="_blank" title="Dyuthi Home" ><img src="/static/tmps/images/dyuthilogo.png"></a></li>
+        <li><a href="#!/page_home">Home</a></li>
+        <li><a href="#!/page_rules">Rules</a></li>
+        <li><a href="#!/page_topper">Leader Board</a></li>
+        <li><a href="http://www.facebook.com/dyuthigec"  target="_blank" title="facebook">Forum</a></li>   
+        <li class="no_bg"><a href="{% url socialauth_begin 'facebook' %}"><img src="/static/tmps/images/social/login_1.png" alt="Login with Facebook"></div></a></li>        
+    
+      </ul>
+    </nav>    
+<div class="logo"><a href="#!/page_home"><img src="/static/tmps/images/logo.png" alt=""></a></div>
+  </header>
+
+  
+  <ul>
+<li id="page_temp"></li>
+<li id="page_home">		
+<div class="postimg"> <img src='/static/tmps/images/mainpage.jpg' class="pic" alt="" width="927px" height="424px" align='centre' title=""/></div>
+                  </div>		
+</li>
+<li id="page_topper"> <a href="#!/page_home" class="close"></a>
+      <div class="container">
+        <div class="wrapper">
+          <h1 align="center">Leader Board</h1>
+          <div class="viewport viewport2">
+            <div class="overview overview2">
+            <div class="fullwidth"><h3>
+            <table width="100%" border="2" align="left" cellpadding="4" >
+            <tr align="justify"height="40"><th width="10%">RANK</th><th width="25%">NAME</th><th width="49%">COLLEGE</th><th width="16%">LEVEL</th></tr>
+              {% for i,j in c %}
+  
+               <tr class="color_white" align="justify" height="40">
+               <td>{{ i }}</td>
+                <td>{{ j.user.first_name }}</td>
+                <td>{{ j.college }}</td>
+                 <td>{{ j.level }}</td>
+                 </tr>
+             {% endfor %}
+             
+ 
+                
+                 
+          </table></h3>
+     </div>
+           
+              <div class="divider"></div>
+          </div>
+          <div class="scrollbar scrollbar2">
+            <div class="track">
+              <div class="thumb thumb2"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </li>
+   
+    <li id="page_rules"> <a href="#!/page_home" class="close"></a>
+      <div class="container">
+        <div class="wrapper">         
+          <h1 align="center">RULES</h1>
+          <div style="left:30px">
+            <blockquote>
+              <h4 class="color_white">1,</h4>
+              <h4 class="pad7"><span class="color_white">2,</h4>
+              <h4 class="pad7"><span class="color2">3,</h4>
+              <h4 class="pad7">4,</h4>
+              <h4 class="pad7">5,</h4>
+              <h4 class="pad7">6,</h4>
+            </blockquote>
+          </div>
+        </div>
+      </div>
+    </li>    
+   
+</section>
+
+
+</body>
+
+</html>

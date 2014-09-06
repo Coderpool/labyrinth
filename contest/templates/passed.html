@@ -1,0 +1,88 @@
+{% extends "base.html" %}
+{% block content %}
+    {% include "nav.html" %}
+</br></br></br></br></br></br></br></br></br></br>      .
+<title>Correct Answer!!!</title>
+<script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '411718605604683', // App ID
+      channelUrl : '//labyrinth.dyuthi.in/', // Channel File
+      status     : true, // check login status
+      cookie     : true, // enable cookies to allow the server to access the session
+      xfbml      : true  // parse XFBML
+    });
+
+    // Additional initialization code here
+    FB.getLoginStatus(function(response) {
+  if (response.status === 'connected') {
+      postToFeed();
+//      alert("connected");
+     // the user is logged in and has authenticated your
+    // app, and response.authResponse supplies
+    // the user's ID, a valid access token, a signed
+    // request, and the time the access token 
+    // and signed request each expire
+    var uid = response.authResponse.userID;
+    var accessToken = response.authResponse.accessToken;
+  } else if (response.status === 'not_authorized') {
+//    alert("not authorised");
+    // the user is logged in to Facebook, 
+    // but has not authenticated your app
+  } else {
+//    alert("not connected");
+
+//    alert(location.href);
+    // the user isn't logged in to Facebook.
+  }
+ });
+  };
+
+  // Load the SDK Asynchronously
+  (function(d){
+     var js, id = 'facebook-jssdk', ref = d.getElementsByTagName('script')[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement('script'); js.id = id; js.async = true;
+     js.src = "//connect.facebook.net/en_US/all.js";
+     ref.parentNode.insertBefore(js, ref);
+   }(document));
+</script>
+
+<script>
+function postToFeed() {
+
+        // calling the API ...
+          FB.api('/me/feed', 'post', 
+                  { 
+                      message     : ":) Hey  I have Unlocked Level {{ c.level }} in Labyrinth Phase III, The Online Treasure Hunt of Dyuthi'13. Come and Join Me. Dyuthi13 Registration has started. Visit: http://www.dyuthi.in/ for more details.  #dyuthi13 #labyrinth :)",
+                      link        : 'https://www.facebook.com/labyrinthdyuthi/',
+                      picture     : 'http://www.labyrinth.dyuthi.in{{ STATIC_URL }}tmps/fb/logo.jpg',
+                      name        : 'Labyrinth-Dyuthi13',
+                      description : "The online treasure hunt of Dyuthi'13 Visit www.labyrinth.dyuthi.in"
+              }, 
+              function(response) {
+
+                  if (!response || response.error) {
+//                      alert(JSON.stringify(response.error));
+                      window.location.href="/home/?level=new"
+                  } else {
+//                      alert('Post ID: ' + response.id);
+                      window.location.href="/home/?level=new"
+                  }
+              });
+      }
+
+
+
+</script>
+<meta http-equiv="refresh" content="5; /home" />
+     <h1  class="color_yellow">You have Unlocked A New Level</h1>
+<div class="postimg"> <img src='{{ STATIC_URL }}complete.jpg' class="pic" alt="" width="870px" align='centre' title=""/></div>
+                  </div>
+                                 
+   
+    </div>
+    </div>
+
+
+{% endblock %}

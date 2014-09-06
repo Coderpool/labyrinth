@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block content %}
+    {% include "nav.html" %}
+
+ </br></br></br></br></br></br></br></br></br></br></br>  
+
+<head>
+    <title>{{ l.name }}</title>
+</head>
+<nav class="menu">
+<ul id="menu">
+<li id="page_level">
+      <div class="container" position="absolute" top="50%" margin-top="-9em" >
+                <h1 class="color_yellow">{{ l.dialogue }}</h1>
+                  <div class="postimg"> <img src='{{ MEDIA_URL }}{{ l.image }}' class="pic" alt="" width="870px" align='centre' title=""/></div>
+                  </div>
+                 <h4 class="color_white">Your answer here</h4>
+                <form action='/level/complete/' method='post'>
+		   {% csrf_token %}
+                 <table width="100%" border="1" cellpadding="5" align="centre"><tr><td><input name="ans" type="text" autocomplete="off" />
+		<input type="submit"   value="Submit" /></td><td>&nbsp;</td></tr>
+ 		</table>
+
+            	</form>
+                   
+ </ul>
+</nav>     
+
+{% endblock %}
+
+
+      
