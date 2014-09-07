@@ -2,7 +2,7 @@
 import django.conf.global_settings as DEFAULT_SETTINGS
 
 
-DEBUG = True
+DEBUG = False
 TEMPLATE_DEBUG = DEBUG
 
 ADMINS = (
@@ -100,6 +100,7 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
+    'contest.middleware.SocialAuthExceptionMiddleware',
 )
 
 ROOT_URLCONF = 'urls'
@@ -145,11 +146,7 @@ LOGIN_ERROR_URL = '/autherror/'
 SOCIAL_AUTH_LOGIN_REDIRECT_URL='/login/'
 SOCIAL_AUTH_COMPLETE_URL_NAME  = 'socialauth_complete'
 SOCIAL_AUTH_ASSOCIATE_URL_NAME = 'socialauth_associate_complete'
-# A sample logging configuration. The only tangible logging
-# performed by this configuration is to send an email to
-# the site admins on every HTTP 500 error.
-# See http://docs.djangoproject.com/en/dev/topics/logging for
-# more details on how to customize your logging configuration.'''
+
 LOGGING = {
     'version': 1,
     'disable_existing_loggers': False,
