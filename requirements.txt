@@ -1,6 +1,6 @@
 Django==1.11.28
 feedparser==5.1
-gunicorn==0.12.2
+gunicorn==19.5.0
 python-dateutil==1.5
 python-sunlightapi==1.1.0
 django-social-auth==0.7.25
