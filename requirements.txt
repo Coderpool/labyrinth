@@ -1,5 +1,5 @@
 Django==1.11.28
-feedparser==5.1
+feedparser==5.1.2
 gunicorn==19.5.0
 python-dateutil==1.5
 python-sunlightapi==1.1.0
